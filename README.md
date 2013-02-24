@@ -8,59 +8,9 @@
 	- [Benchmarks](#benchmarks)
 		- [Benchmark Results](#benchmark-results)
 			- [8 threads, running the 4 tests.](#8-threads-running-the-4-tests)
-- [		#](##)
-- [Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8](#proxy_getproxyclass:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
-- [		#](##)
-- [Proxy_isProxyClassTrue: run duration:  5,000 ms, #of logical CPUS: 8](#proxy_isproxyclasstrue:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
-- [		#](##)
-- [Proxy_isProxyClassFalse: run duration:  5,000 ms, #of logical CPUS: 8](#proxy_isproxyclassfalse:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
-- [		#](##)
-- [Annotation_equals: run duration:  5,000 ms, #of logical CPUS: 8](#annotation_equals:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
-- [		#](##)
-- [Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8](#proxy_getproxyclass:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
-- [		#](##)
-- [Proxy_isProxyClassTrue: run duration:  5,000 ms, #of logical CPUS: 8](#proxy_isproxyclasstrue:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
-- [		#](##)
-- [Proxy_isProxyClassFalse: run duration:  5,000 ms, #of logical CPUS: 8](#proxy_isproxyclassfalse:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
-- [		#](##)
-- [Annotation_equals: run duration:  5,000 ms, #of logical CPUS: 8](#annotation_equals:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [		#](##)
-- [Warm up:		# Warm up:](#warm-up:		#-warm-up:)
-- [Measure:		# Measure:](#measure:		#-measure:)
 			- [1-40 threads, running the getProxyClass](#1-40-threads-running-the-getproxyclass)
-- [#](##)
-- [Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8# Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8](#proxy_getproxyclass:-run-duration:--5000-ms-#of-logical-cpus:-8#-proxy_getproxyclass:-run-duration:--5000-ms-#of-logical-cpus:-8)
-- [#](##)
-- [Warm up:# Warm up:](#warm-up:#-warm-up:)
-- [Measure:# Measure:](#measure:#-measure:)
 	- [Usage](#usage)
 		- [Not a solution to Spring performance in 3.0.x or 3.1.x](#not-a-solution-to-spring-performance-in-30x-or-31x)
-	- [- https://jira.springsource.org/browse/SPR-9166](#--https://jiraspringsourceorg/browse/spr-9166)
-	- [-- https://jira.springsource.org/browse/SPR-8319](#---https://jiraspringsourceorg/browse/spr-8319)
-	- [-- https://jira.springsource.org/browse/SPR-9298](#---https://jiraspringsourceorg/browse/spr-9298)
-	- [- ConcurrentReferenceHashMap taken from https://raw.github.com/jbossas/jboss-as/master/web/src/main/java/org/jboss/as/web/deployment/ConcurrentReferenceHashMap.java](#--concurrentreferencehashmap-taken-from-https://rawgithubcom/jbossas/jboss-as/master/web/src/main/java/org/jboss/as/web/deployment/concurrentreferencehashmapjava)
-	- [- PaddedAtomicLong from Martin Thompson: http://www.mechanical-sympathy.blogspot.co.uk/2011/09/adventures-with-atomiclong.html](#--paddedatomiclong-from-martin-thompson:-http://wwwmechanical-sympathyblogspotcouk/2011/09/adventures-with-atomiclonghtml)
 
 ## References and Thanks to Many Many very smart people
 
@@ -161,13 +111,16 @@ The second set of bench marks, just runs getProxyClass, upto a max of 40 threads
 ```java
 Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
 
-#		#
-# Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8
+
+ Warm up:		# Warm up:
+================
            1 threads, Tavg =  6,097.78 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =  6,445.19 ns/op (σ =   0.00 ns/op)
            1 threads, Tavg =  6,101.31 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =  6,461.78 ns/op (σ =   0.00 ns/op)
-# Measure:		# Measure:
+================
+* Measure:		* Measure:
+================
            1 threads, Tavg =  6,515.80 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =  6,528.96 ns/op (σ =   0.00 ns/op)
            2 threads, Tavg =  7,146.72 ns/op (σ =   9.45 ns/op)				   2 threads, Tavg =  7,281.33 ns/op (σ =  10.80 ns/op)
            3 threads, Tavg =  7,901.80 ns/op (σ =  48.87 ns/op)				   3 threads, Tavg =  7,778.69 ns/op (σ =  41.32 ns/op)
@@ -177,13 +130,16 @@ Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
            7 threads, Tavg = 14,481.17 ns/op (σ =  60.58 ns/op)				   7 threads, Tavg = 12,506.20 ns/op (σ = 115.13 ns/op)
            8 threads, Tavg = 20,627.51 ns/op (σ =  35.11 ns/op)				   8 threads, Tavg = 15,428.95 ns/op (σ = 118.15 ns/op)
 
-#		#
-# Proxy_isProxyClassTrue: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Proxy_isProxyClassTrue: run duration:  5,000 ms, #of logical CPUS: 8
+		#
+ Warm up:		# Warm up:
+================
            1 threads, Tavg =    203.36 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =    177.00 ns/op (σ =   0.00 ns/op)
            1 threads, Tavg =    203.19 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =    176.73 ns/op (σ =   0.00 ns/op)
-# Measure:		# Measure:
+================
+ Measure:		# Measure:
+================
            1 threads, Tavg =    202.55 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =    175.04 ns/op (σ =   0.00 ns/op)
            2 threads, Tavg =  1,159.55 ns/op (σ =  33.85 ns/op)				   2 threads, Tavg =    178.80 ns/op (σ =   0.13 ns/op)
            3 threads, Tavg =  1,330.17 ns/op (σ =  18.12 ns/op)				   3 threads, Tavg =    193.43 ns/op (σ =   1.01 ns/op)
@@ -193,13 +149,16 @@ Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
            7 threads, Tavg =  3,127.27 ns/op (σ =  36.54 ns/op)				   7 threads, Tavg =    272.18 ns/op (σ =   1.44 ns/op)
            8 threads, Tavg =  3,398.88 ns/op (σ =  27.67 ns/op)				   8 threads, Tavg =    311.97 ns/op (σ =   2.51 ns/op)
 
-#		#
-# Proxy_isProxyClassFalse: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Proxy_isProxyClassFalse: run duration:  5,000 ms, #of logical CPUS: 8
+		#
+ Warm up:		# Warm up:
+================
            1 threads, Tavg =    189.91 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =     85.90 ns/op (σ =   0.00 ns/op)
            1 threads, Tavg =    203.44 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =     85.14 ns/op (σ =   0.00 ns/op)
-# Measure:		# Measure:
+================
+ Measure:		# Measure:
+================
            1 threads, Tavg =    201.88 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =     85.59 ns/op (σ =   0.00 ns/op)
            2 threads, Tavg =  1,083.05 ns/op (σ =  12.88 ns/op)				   2 threads, Tavg =     87.92 ns/op (σ =   0.08 ns/op)
            3 threads, Tavg =  1,240.99 ns/op (σ =   3.50 ns/op)				   3 threads, Tavg =     97.51 ns/op (σ =   1.51 ns/op)
@@ -209,13 +168,16 @@ Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
            7 threads, Tavg =  3,016.30 ns/op (σ =  17.26 ns/op)				   7 threads, Tavg =    170.35 ns/op (σ =   1.97 ns/op)
            8 threads, Tavg =  3,417.17 ns/op (σ =  22.64 ns/op)				   8 threads, Tavg =    198.74 ns/op (σ =   1.27 ns/op)
 
-#		#
-# Annotation_equals: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Annotation_equals: run duration:  5,000 ms, #of logical CPUS: 8
+		#
+ Warm up:		# Warm up:
+================
            1 threads, Tavg =    466.12 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =    499.94 ns/op (σ =   0.00 ns/op)
            1 threads, Tavg =    465.00 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =    496.47 ns/op (σ =   0.00 ns/op)
-# Measure:		# Measure:
+================
+ Measure:		# Measure:
+================
            1 threads, Tavg =    466.98 ns/op (σ =   0.00 ns/op)				   1 threads, Tavg =    497.04 ns/op (σ =   0.00 ns/op)
            2 threads, Tavg =  1,137.61 ns/op (σ =   4.17 ns/op)				   2 threads, Tavg =    508.86 ns/op (σ =   0.32 ns/op)
            3 threads, Tavg =  1,995.22 ns/op (σ =   5.77 ns/op)				   3 threads, Tavg =    554.92 ns/op (σ =   2.80 ns/op)
@@ -225,13 +187,16 @@ Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
            7 threads, Tavg =  7,056.70 ns/op (σ =  42.77 ns/op)				   7 threads, Tavg =    867.29 ns/op (σ =   6.03 ns/op)
            8 threads, Tavg =  7,579.83 ns/op (σ =  46.69 ns/op)				   8 threads, Tavg =    981.51 ns/op (σ =   1.72 ns/op)
 
-#		#
-# Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8
+		#
+ Warm up:		# Warm up:
+================
           20 threads, Tavg = 61,327.42 ns/op (σ = 773.74 ns/op)				  20 threads, Tavg = 38,434.58 ns/op (σ = 618.25 ns/op)
           20 threads, Tavg = 61,864.68 ns/op (σ = 990.49 ns/op)				  20 threads, Tavg = 38,953.97 ns/op (σ = 296.18 ns/op)
-# Measure:		# Measure:
+================
+ Measure:		# Measure:
+================
           20 threads, Tavg = 62,284.52 ns/op (σ = 986.35 ns/op)				  20 threads, Tavg = 38,408.78 ns/op (σ = 363.68 ns/op)
           21 threads, Tavg = 65,814.18 ns/op (σ = 783.89 ns/op)				  21 threads, Tavg = 40,726.45 ns/op (σ = 846.00 ns/op)
           22 threads, Tavg = 68,900.06 ns/op (σ = 1,110.54 ns/op)			  22 threads, Tavg = 42,392.21 ns/op (σ = 677.61 ns/op)
@@ -239,13 +204,16 @@ Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
           24 threads, Tavg = 74,568.58 ns/op (σ = 1,215.74 ns/op)		      24 threads, Tavg = 46,018.68 ns/op (σ = 644.07 ns/op)
           25 threads, Tavg = 75,893.96 ns/op (σ = 2,179.06 ns/op)			  25 threads, Tavg = 48,315.78 ns/op (σ = 731.60 ns/op)
 
-#		#
-# Proxy_isProxyClassTrue: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Proxy_isProxyClassTrue: run duration:  5,000 ms, #of logical CPUS: 8
+		#
+ Warm up:		# Warm up:
+================
           20 threads, Tavg =  9,063.70 ns/op (σ = 257.19 ns/op)				  20 threads, Tavg =    806.70 ns/op (σ =   6.13 ns/op)
           20 threads, Tavg =  8,823.53 ns/op (σ = 176.60 ns/op)				  20 threads, Tavg =    809.96 ns/op (σ =   4.70 ns/op)
-# Measure:		# Measure:
+================
+ Measure:		# Measure:
+================
           20 threads, Tavg =  8,853.09 ns/op (σ = 488.12 ns/op)				  20 threads, Tavg =    803.11 ns/op (σ =   5.93 ns/op)
           21 threads, Tavg =  9,270.52 ns/op (σ = 210.02 ns/op)				  21 threads, Tavg =    844.50 ns/op (σ =   6.95 ns/op)
           22 threads, Tavg =  9,754.47 ns/op (σ = 354.98 ns/op)				  22 threads, Tavg =    884.71 ns/op (σ =   5.25 ns/op)
@@ -253,13 +221,16 @@ Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
           24 threads, Tavg = 10,633.98 ns/op (σ = 263.65 ns/op)				  24 threads, Tavg =    975.15 ns/op (σ =   9.68 ns/op)
           25 threads, Tavg = 11,060.34 ns/op (σ = 279.84 ns/op)				  25 threads, Tavg =  1,001.26 ns/op (σ =   6.71 ns/op)
 
-#		#
-# Proxy_isProxyClassFalse: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Proxy_isProxyClassFalse: run duration:  5,000 ms, #of logical CPUS: 8
+		#
+ Warm up:		# Warm up:
+================
           20 threads, Tavg =  8,876.60 ns/op (σ = 177.45 ns/op)				  20 threads, Tavg =    482.21 ns/op (σ =   2.34 ns/op)
           20 threads, Tavg =  8,868.78 ns/op (σ = 152.58 ns/op)				  20 threads, Tavg =    481.62 ns/op (σ =   3.73 ns/op)
-# Measure:		# Measure:
+================
+ Measure:		# Measure:
+================
           20 threads, Tavg =  8,907.63 ns/op (σ = 532.81 ns/op)				  20 threads, Tavg =    484.16 ns/op (σ =   3.59 ns/op)
           21 threads, Tavg =  9,294.63 ns/op (σ = 192.21 ns/op)				  21 threads, Tavg =    509.54 ns/op (σ =   2.90 ns/op)
           22 threads, Tavg =  9,820.60 ns/op (σ = 308.00 ns/op)				  22 threads, Tavg =    529.97 ns/op (σ =   2.79 ns/op)
@@ -267,13 +238,16 @@ Unpatched j.l.r.Proxy															Patched j.l.r.Proxy:
           24 threads, Tavg = 10,680.39 ns/op (σ = 273.07 ns/op)				  24 threads, Tavg =    578.46 ns/op (σ =   4.29 ns/op)
           25 threads, Tavg = 11,107.11 ns/op (σ = 276.82 ns/op)				  25 threads, Tavg =    602.47 ns/op (σ =   4.57 ns/op)
 
-#		#
-# Annotation_equals: run duration:  5,000 ms, #of logical CPUS: 8
-#		#
-# Warm up:		# Warm up:
+================
+ Annotation_equals: run duration:  5,000 ms, #of logical CPUS: 8
+		#
+ Warm up:		# Warm up:
+================
           20 threads, Tavg = 18,672.52 ns/op (σ = 216.24 ns/op)				  20 threads, Tavg =  2,461.13 ns/op (σ =  30.87 ns/op)
           20 threads, Tavg = 18,743.04 ns/op (σ = 135.25 ns/op)				  20 threads, Tavg =  2,474.52 ns/op (σ =  29.03 ns/op)
-# Measure:		# Measure:
+================
+ Measure:		# Measure:
+================
           20 threads, Tavg = 18,906.74 ns/op (σ = 175.28 ns/op)				  20 threads, Tavg =  2,471.36 ns/op (σ =  31.31 ns/op)
           21 threads, Tavg = 19,964.27 ns/op (σ = 257.05 ns/op)				  21 threads, Tavg =  2,600.50 ns/op (σ =  34.27 ns/op)
           22 threads, Tavg = 20,571.67 ns/op (σ = 264.78 ns/op)				  22 threads, Tavg =  2,724.40 ns/op (σ =  45.29 ns/op)
@@ -297,13 +271,16 @@ Unpatched j.l.r.Proxy																	Patched j.l.r.Proxy:
 
 
 ```java
-##
-# Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8# Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8
-##
-# Warm up:# Warm up:
+================
+ Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8# Proxy_getProxyClass: run duration:  5,000 ms, #of logical CPUS: 8
+
+ Warm up:# Warm up:
+================
            1 threads (928812 ops), Tavg =  5,383.50 ns/op (σ =   0.00 ns/op)           1 threads (830396 ops), Tavg =  6,022.33 ns/op (σ =   0.00 ns/op)
            1 threads (927876 ops), Tavg =  5,388.64 ns/op (σ =   0.00 ns/op)           1 threads (830441 ops), Tavg =  6,022.53 ns/op (σ =   0.00 ns/op)
-# Measure:# Measure:
+================
+ Measure:# Measure:
+================
            1 threads (932179 ops), Tavg =  5,364.25 ns/op (σ =   0.00 ns/op)           1 threads (834141 ops), Tavg =  5,994.76 ns/op (σ =   0.00 ns/op)
            2 threads (1648504 ops), Tavg =  6,066.05 ns/op (σ =   0.63 ns/op)           2 threads (1600323 ops), Tavg =  6,249.88 ns/op (σ =  12.37 ns/op)
            3 threads (2161399 ops), Tavg =  6,940.83 ns/op (σ = 117.10 ns/op)           3 threads (2198414 ops), Tavg =  6,824.34 ns/op (σ =  15.54 ns/op)
