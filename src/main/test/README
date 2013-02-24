@@ -1,0 +1,10 @@
+These bench marks were taken from:
+
+https://github.com/plevart/jdk8-tl [proxy branch]
+
+Copyright is thiers.  Many thanks to Peter Levart
+
+The TestRunner was modified to add:
+
+- The number of operations performed every 5000ms (5 secs)
+- to call ProxyBenchmarkTest.class.getDeclaredAnnotations(); as part of the test cases
