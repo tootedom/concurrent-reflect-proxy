@@ -326,7 +326,7 @@ Unpatched j.l.r.Proxy																	Patched j.l.r.Proxy:
 
 ## Usage
 
--Xbootclasspath/p:/Users/dominictootell/git/concurrent-reflect-proxy/target/concurrent-reflect-proxy-1.0.jar -DPROXY.WAIT.STRATEGY=SleepingWaitStrategy
+-Xbootclasspath/p:/Users/dominictootell/git/concurrent-reflect-proxy/target/concurrent-reflect-proxy-1.1.jar -DPROXY.WAIT.STRATEGY=SleepingWaitStrategy
 
 There's several wait strategies for when there is a busy loop, i.e. the following bit.  The choice of busy spin strategy
 is really really dependent on you hardware.  The default is "SleepingWaitStrategy":
