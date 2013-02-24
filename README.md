@@ -369,6 +369,24 @@ Which takes one of the values:    SleepingWaitStrategy, OneNanoSleepWaitStrategy
 -Xbootclasspath/p:<absolute-path-to>/concurrent-reflect-proxy-1.1.jar -DPROXY.WAIT.STRATEGY=BusySpinWaitStrategy
 ```
 
+You can get the jar via maven if you want:
+
+```xml
+    <repositories>
+        <repository>
+            <id>myrepo</id>
+            <url>https://raw.github.com/tootedom/tootedom-mvn-repo/master/releases/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>org.greencheek</groupId>
+            <artifactId>concurrent-reflect-proxy</artifactId>
+            <version>1.1</version>
+        </dependency>
+    </dependencies>
+```
+
 
 ### Not a solution to Spring performance in 3.0.x or 3.1.x
 
