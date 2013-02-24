@@ -326,7 +326,9 @@ Unpatched j.l.r.Proxy																	Patched j.l.r.Proxy:
 
 ## Usage
 
--Xbootclasspath/p:/Users/dominictootell/git/concurrent-reflect-proxy/target/concurrent-reflect-proxy-1.1.jar -DPROXY.WAIT.STRATEGY=SleepingWaitStrategy
+```
+-Xbootclasspath/p:<absolute-path-to>/concurrent-reflect-proxy-1.1.jar
+```
 
 There's several wait strategies for when there is a busy loop, i.e. the following bit.  The choice of busy spin strategy
 is really really dependent on you hardware.  The default is "SleepingWaitStrategy":
@@ -361,7 +363,12 @@ is really really dependent on you hardware.  The default is "SleepingWaitStrateg
 ```
 
 The wait strategy can be changed via the system property: -DPROXY.WAIT.STRATEGY=SleepingWaitStrategy
-Which takes one of the values:    SleepingWaitStrategy, OneNanoSleepWaitStrategy, BusySpinWaitStrategy, YieldingWaitStrategy
+Which takes one of the values:    SleepingWaitStrategy, OneNanoSleepWaitStrategy, BusySpinWaitStrategy, YieldingWaitStrategy:
+
+```
+-Xbootclasspath/p:<absolute-path-to>/concurrent-reflect-proxy-1.1.jar -DPROXY.WAIT.STRATEGY=BusySpinWaitStrategy
+```
+
 
 ### Not a solution to Spring performance in 3.0.x or 3.1.x
 
