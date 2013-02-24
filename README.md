@@ -57,10 +57,12 @@ Java's Proxy class has poor performance under multi-threaded environments.
 And could lead to what feels like a complete lock of the jvm up.  The synchronized block and map cause contention, where
 a thread dump would show something like:
 
+```
 java.lang.Thread.State: BLOCKED (on object monitor)
 	at java.lang.reflect.Proxy.getProxyClass(Proxy.java:417)
 	- locked <7f45155b0> (a java.util.HashMap)
 	at java.lang.reflect.Proxy.newProxyInstance(Proxy.java:581)
+```
 
 This simple library is a replacement of java.lang.reflect.Proxy, for use the bootclasspath mechanism java affords you.
 The Proxy is basically a copy of Proxy but changes the caching mechanism from using a HashMap surrounded with hard
