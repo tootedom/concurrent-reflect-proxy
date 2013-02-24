@@ -1,16 +1,16 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-	- [References and Thanks to Many Many very smart people](#references-and-thanks-to-many-many-very-smart-people)
-		- [bug relating to the Performance of java.lang.reflect.Proxy](#bug-relating-to-the-performance-of-javalangreflectproxy)
-		- [Spring issue 3.1.x that relates to above:](#spring-issue-31x-that-relates-to-above:)
-		- [Work being done in Java 8](#work-being-done-in-java-8)
-	- [Synopsis](#synopsis)
-	- [Benchmarks](#benchmarks)
-		- [Benchmark Results](#benchmark-results)
-			- [8 threads, running the 4 tests.](#8-threads-running-the-4-tests)
-			- [1-40 threads, running the getProxyClass](#1-40-threads-running-the-getproxyclass)
-	- [Usage](#usage)
-		- [Not a solution to Spring performance in 3.0.x or 3.1.x](#not-a-solution-to-spring-performance-in-30x-or-31x)
+- [References and Thanks to Many Many very smart people](#references-and-thanks-to-many-many-very-smart-people)
+ - [bug relating to the Performance of java.lang.reflect.Proxy](#bug-relating-to-the-performance-of-javalangreflectproxy)
+ - [Spring issue 3.1.x that relates to above:](#spring-issue-31x-that-relates-to-above:)
+ - [Work being done in Java 8](#work-being-done-in-java-8)
+- [Synopsis](#synopsis)
+ - [Benchmarks](#benchmarks)
+  - [Benchmark Results](#benchmark-results)
+   - [8 threads, running the 4 tests.](#8-threads-running-the-4-tests)
+   - [1-40 threads, running the getProxyClass](#1-40-threads-running-the-getproxyclass)
+- [Usage](#usage)
+- [Not a solution to Spring performance in 3.0.x or 3.1.x](#not-a-solution-to-spring-performance-in-30x-or-31x)
 
 ## References and Thanks to Many Many very smart people
 
